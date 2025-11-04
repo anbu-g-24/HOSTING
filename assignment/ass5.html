@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Admission Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f6ff;
+      margin: 20px;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .checkbox-group label {
+      display: inline-block;
+      margin-right: 15px;
+      font-weight: normal;
+    }
+    
+      width: 48%;
+      margin-top: 15px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: rgb(1, 5, 4);
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    input[type="reset"] {
+      background-color: #6c757d;
+    }
+  </style>
+</head>
+<body>
+
+  <form action="#" method="post" enctype="multipart/form-data">
+    <h2>Student Admission Form</h2>
+
+    <!-- Student Details -->
+    <label for="fname">First Name:</label>
+    <input type="text" id="fname" name="fname" placeholder="Enter first name" required>
+
+    <label for="lname">Last Name:</label>
+    <input type="text" id="lname" name="lname" placeholder="Enter last name" required>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+
+    <label for="phone">Contact Number:</label>
+    <input type="tel" id="phone" name="phone" placeholder="Enter 10-digit number" pattern="[0-9]{10}" required>
+
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" placeholder="Enter your full address" required></textarea>
+
+    <!-- Dropdowns -->
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" required>
+      <option value="">-- Select Gender --</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+
+    </select>
+
+    <label for="blood">Blood Group:</label>
+    <select id="blood" name="blood" required>
+      <option value="">-- Select Blood Group --</option>
+      <option value="A+">A+</option>
+      <option value="B+">B+</option>
+      <option value="AB+">AB+</option>
+      <option value="O+">O+</option>
+    
+    </select>
+
+    <label for="nationality">Nationality:</label>
+    <select id="nationality" name="nationality" required>
+      <option value=""> Select Nationality</option>
+      <option value="Indian">Indian</option>
+      <option value="American">American</option>
+      <option value="Canadian">Canadian</option>
+
+    </select>
+
+    <!-- Checkbox group -->
+    <label>Parent/Guardian Type:</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="guardian[]" value="Father"> Father</label>
+      <label><input type="checkbox" name="guardian[]" value="Mother"> Mother</label>
+      <label><input type="checkbox" name="guardian[]" value="Guardian"> Guardian</label>
+    </div>
+
+    <!-- Additional Info -->
+    <label for="occupation">Parent/Guardian Occupation:</label>
+    <input type="text" id="occupation" name="occupation" placeholder="Enter occupation" required>
+
+    <label for="religion">Religion:</label>
+    <input type="text" id="religion" name="religion" placeholder="Enter religion" required>
+
+    <label for="activities">Extra-curricular Activities:</label>
+    <input type="text" id="activities" name="activities" placeholder="E.g., Sports, Music, Art">
+
+    <!-- File Upload -->
+    <label for="photo">Upload Photo:</label>
+    <input type="file" id="photo" name="photo" accept="image/*" required>
+
+    <label for="certificates">Upload Certificates:</label>
+    <input type="file" id="certificates" name="certificates" accept=".pdf,.jpg,.png" multiple required>
+
+    <!-- Submit and Reset -->
+    <div style="display: flex; justify-content: space-between;">
+      <input type="submit" value="Submit Form">
+      <input type="reset" value="Reset Form">
+    </div>
+  </form>
+
+</body>
+</html>

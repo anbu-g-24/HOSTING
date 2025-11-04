@@ -1,116 +1,126 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <title>Tables: Practice & Assignments</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>day 4</title>
 </head>
+
 <body>
-  <!-- Task 3 & Task 5: Student Report table with a colspan heading -->
-  <h2>Student Report</h2>
-  <table border="1" cellpadding="8" width="90%">
+  <header>
+    <h1>Romen Reigns</h1>
+      <p>Roman Reigns is a professional wrestler, actor, and former football player whose real name is Leati Joseph
+      "Joe" Anoai. Born May 25, 1985, he is known for his successful WWE career,
+      including multiple world championships, and is part of the Anoaʻi wrestling family </p>
+
+    <img src="../roman-reigns.webp" width="200" hight="200" target="black">
+    <aside>www king</aside>
+    <br>
+    
+  </header>
+  <div>
+    <h1>Fruits</h1>
+    <ol>
+      <li>apple</li>
+      <li>orange</li>
+      <li>mango</li>
+      <li>banana</li>
+    </ol>
+
+     <h2>Three goals of this year</h2>
+    <ul>
+        <li>Pass the course in SLA</li>
+        <li>Land a Job with great package</li>
+        <li>Travel to a new country</li>
+    </ul>
+
+  </div>
+
+  <selection>
+    <h1>Traval</h1>
+    <p>I am going kerela.its a butifull place</p>
+    <img src="../kerala.jpg" width="200" heigh="200"><aside> kerala</aside>
+    <header>
+    <a href="https://www.tripadvisor.in/Attractions-g297631-Activities-Kerala.html">toures place</a>
+    </header>
+
+  </selection>
+
+  <table  cellpadding="8" cellspacing="3" border="4" align="center">
+    <h1 align="center">MOVIES </h1>
     <tr>
-      <th colspan="4">Student Report</th>
+      <th>s no</th>
+      <th colspan="2">movies name</th>
+      
+      
+      
     </tr>
     <tr>
-      <th>Name</th>
-      <th>Class</th>
-      <th>Roll No.</th>
-      <th>Average</th>
+      <td>1</td>
+      <td>Thalaiva</td>
+      <td> thalapathi</td>
+
+
     </tr>
     <tr>
-      <td>Aisha</td>
-      <td>10A</td>
-      <td>12</td>
-      <td>87%</td>
+      <td>2</td>
+      <td>veeram</td>
+      <td>ajith</td>
+      
     </tr>
     <tr>
-      <td>Ravi</td>
-      <td>10A</td>
-      <td>15</td>
-      <td>91%</td>
+      <td>3</td>
+      <td>three</td>
+      <td>dhanush</td>
+      
     </tr>
+
   </table>
 
-  <br/>
+  <h1>Form</h1>
 
-  <!-- Task 1, 2, 4 & 5: Weekly schedule table (Days × Subjects) using header row, rowspan and styling -->
-  <h2>Weekly Schedule</h2>
-  <table border="1" cellpadding="6" width="80%">
-    <tr>
-      <th>Day</th>
-      <th>9:00 - 10:00</th>
-      <th>10:15 - 11:15</th>
-      <th>11:30 - 12:30</th>
-      <th>1:30 - 2:30</th>
-    </tr>
-    <tr>
-      <td>Monday</td>
-      <td>Math</td>
-      <td>English</td>
-      <td>Science</td>
-      <td>Art</td>
-    </tr>
-    <tr>
-      <td>Tuesday</td>
-      <td>Math</td>
-      <td>History</td>
-      <td>Science</td>
-      <td>PE</td>
-    </tr>
-    <tr>
-      <td>Wednesday</td>
-      <!-- Example of rowspan: "Computer Lab" runs through two time slots on Wednesday -->
-      <td rowspan="2">Computer Lab</td>
-      <td>English</td>
-      <td>Biology</td>
-      <td>Music</td>
-    </tr>
-    <tr>
-      <td>Thursday</td>
-      <!-- the second cell for 9:00-10:00 is merged above using rowspan -->
-      <td>Civics</td>
-      <td>Chemistry</td>
-      <td>Drama</td>
-    </tr>
-    <tr>
-      <td>Friday</td>
-      <td>Math</td>
-      <td>Geography</td>
-      <td>Science</td>
-      <td>Assembly</td>
-    </tr>
-  </table>
+     <form action=""></form>
+      <label for="">name</label>
+      <input type="text">
+      <br><hr>
+      <label for="">age</label>
+      <input type="number">
+      <br><hr>
+      <label for="">DOB</label>
+      <input type="date">
+      <br><hr>
+      <label for="">phone number</label>
+      <input type="number">
+      <br><hr>
+      <label for="">email</label>
+      <input type="email">
+      <br><hr>
+      <label for="">gender</label>
+      <select>
+        <option value="">male</option>
+        <option value="">female</option>
+        <option value="">other</option>
+      </select>
+    
+      <br><hr>
+      <label for="">parents</label>
+      <input type="checkbox">
+      <label for="">gaurdians</label>
+      <input type="checkbox">
+      <input type="text">
+      <br><hr>
 
-  <br/>
+      <label for="">medical issue / Disability</label>
+      <input type="radio">
+      <label for="">Yes</label>
+      <input type="radio">
+      <label for="">No</label>
+      <br><hr>
+      
 
-  <!-- Bonus Task: Favorite Movies table with at least 3 columns and 4 rows -->
-  <h2>Favorite Movies</h2>
-  <table border="1" cellpadding="6" width="70%">
-    <tr>
-      <th>Title</th>
-      <th>Genre</th>
-      <th>Rating</th>
-    </tr>
-    <tr>
-      <td>Interstellar</td>
-      <td>Science Fiction</td>
-      <td>9/10</td>
-    </tr>
-    <tr>
-      <td>Spirited Away</td>
-      <td>Animation / Fantasy</td>
-      <td>9.5/10</td>
-    </tr>
-    <tr>
-      <td>The Shawshank Redemption</td>
-      <td>Drama</td>
-      <td>10/10</td>
-    </tr>
-    <tr>
-      <td>Inception</td>
-      <td>Thriller / Sci-Fi</td>
-      <td>9/10</td>
-    </tr>
-  </table>
+
+
 </body>
+
 </html>
