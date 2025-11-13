@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+
+    <style>
+        header{
+            background-color: brown;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container
+    {
+        display: flex;
+        gap: 15px;
+        padding: 20px;
+    }
+    
+    aside{
+        background-color: blue;
+        flex: 0;
+        padding: 20px;
+        border-radius: 30px;
+
+    }
+    main{
+        background-color: blueviolet;
+        color: blanchedalmond;
+        flex: 1;
+        padding: 10px;
+        border-radius: 30px;
+        
+
+    }
+
+    .footer{
+        background-color: green;
+        color: white;
+        flex: 1;
+        padding: 20px;
+        border-radius: 29px;
+    }
+
+
+    </style>
+</head>
+<body> 
+    <div class="container">
+<header>
+    <h1>this is the heading</h1>
+    
+</header>
+    <aside>
+        <h1>sidebar</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    </aside>
+
+    <main>
+        <h2>main content</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur, distinctio?</p>
+    </main>
+    <footer>
+        @anbu Ak 24;
+    </footer>
+    </div>
+    
+</body>
+</html>
