@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Task 1</title>
+    
+    
+    <style>
+         @media (max-width : 600px){
+            body{
+                background-color: pink;
+            }
+        }
+        h3{
+            color: rgb(5, 5, 182);
+        }
+       
+        .grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background-color: yellow;
+            padding: 30px;
+            border: 1px solid black;
+             gap: 10px;
+             text-align: center;
+            
+
+        }
+        .grid div{
+            background-color: gray;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;  
+        }
+        .Box{ 
+            display: grid;
+            grid-template-rows: auto;
+            background-color: rgb(12, 71, 12);
+            text-align: center;
+            width: 100%;
+            margin-top: 20px;
+
+            
+        
+          
+        }
+        .Box div{
+            background-color: gray;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px; 
+            gap: 20px;
+        } 
+
+    </style>
+</head>
+<body>
+    <!--Task 1 grid-template-columns-->
+    <h1>Responsive background</h1>
+    <h3>Columns</h3>
+    <div class="grid" >
+        <div>Box 1</div>
+        <div>Box 2</div>
+        <div>Box 3</div>
+        <div>Box 4</div>
+    </div>
+
+    <!--grid-template-rows-->
+    <h3>Rows</h3>
+
+    <div class="Box" >
+        <div>Box 1</div>
+        <div>Box 2</div>
+        <div>Box 3</div>
+        <div>Box 4</div>
+    </div>
+
+    
+</body>
+</html>

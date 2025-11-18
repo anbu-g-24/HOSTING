@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>block,inline,inline-block</title>
+
+    <style>
+        .block {
+            display: block;
+            background: lightblue;
+            padding: 15px;
+            margin: 5px;
+            width: 200px;
+        }
+
+        .inline {
+            display: inline;
+            background: lightgreen;
+            padding: 10px;
+            margin: 5px;
+            width: 200px;
+            /* width won't apply */
+        }
+
+        .inline-block {
+            display: inline-block;
+            background: lightcoral;
+            padding: 15px;
+            margin: 5px;
+            width: 200px;
+            /* works */
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Block Element</h2>
+    <div class="block"> Block 1</div>
+    <div class="block">Block 2 </div>
+
+    <h2>Inline Element</h2>
+    <span class="inline">inline 1</span>
+    <span class="inline">inline 2</span>
+    <span class="inline">inline 3</span>
+
+
+    <h2>Inline-Block Element</h2>
+    <div class="inline-block">Inline-block 1</div>
+    <div class="inline-block">Inline-block 2</div>
+    <div class="inline-block">Inline-block 3</div>
+
+</body>
+
+</html>

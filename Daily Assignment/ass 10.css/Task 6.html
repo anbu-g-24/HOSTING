@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexbox Page Layout</title>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+  }
+
+  
+  header {
+    background: #0ea5e9;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  
+  nav {
+    background: #0369a1;
+    padding: 12px;
+    
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;           
+    justify-content: center;
+    gap: 25px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .main {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .sidebar {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+ 
+  footer {
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+  }
+
+ 
+  
+</style>
+</head>
+<body>
+
+<header>
+  <h1>My Flexbox Layout</h1>
+  </header>
+  
+
+
+<nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+
+<div class="container">
+  <div class="main">
+    <h2>Main Content</h2>
+    <p>This layout used to rely on floats, but now it's clean and responsive thanks to Flexbox.</p>
+  </div>
+
+  <aside class="sidebar">
+    <h3>Sidebar</h3>
+    <p>Links, categories, or ads go here.</p>
+  </aside>
+</div>
+
+<footer>
+  © 2025 — Flexbox Layout Redesign
+</footer>
+
+</body>
+</html>
+

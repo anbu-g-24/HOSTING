@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid areas</title>
+    <style>
+        .layout {
+            display: grid;
+            grid-template-areas:
+                "header header header"
+                "nav main aside"
+                "footer footer footer";
+            gap: 10px;
+        }
+
+        header {
+            grid-area: header;
+            background: #3498db;
+            padding: 20px;
+        }
+
+        nav {
+            grid-area: nav;
+            background: #2ecc71;
+            padding: 20px;
+        }
+
+        main {
+            grid-area: main;
+            background: #ecf0f1;
+            padding: 20px;
+        }
+
+        aside {
+            grid-area: aside;
+            background: #f1c40f;
+            padding: 20px;
+        }
+
+        footer {
+            grid-area: footer;
+            background: #e74c3c;
+            padding: 20px;
+        }
+       
+       
+    </style>
+
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+        <header>Header</header>
+        <nav>Navigation</nav>
+        <main>Main Content</main>
+        <aside>Sidebar</aside>
+        <footer>Footer</footer>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gradient Homepage — Banner & Positions</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Merriweather:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg-1: #ff7eb3;
+      --bg-2: #8fd3fe;
+      --accent: #6a00f4;
+      --glass: rgba(255,255,255,0.12);
+      --max-width: 1100px;
+      --radius: 14px;
+    }
+
+    /* Full-page gradient background (animated subtle) */
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      background: linear-gradient(120deg, var(--bg-1), var(--bg-2));
+      background-size: 400% 400%;
+      animation: gradientShift 20s ease infinite;
+      color: #111;
+    }
+
+    @keyframes gradientShift{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+
+    /* Page container */
+    .container{
+      max-width:var(--max-width);
+      margin:3rem auto;
+      padding:2rem;
+      position:relative;
+    }
+
+    header.site-head{
+      text-align:center;
+      margin-bottom:2rem;
+      color: #052;
+    }
+
+    header.site-head h1{
+      font-family: 'Merriweather', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin:0.25rem 0;
+      letter-spacing: -0.02em;
+      transform: rotate(-1deg) translateY(-2px);
+      text-shadow: 0 8px 18px rgba(10,10,30,0.12), 0 2px 6px rgba(10,10,30,0.08);
+    }
+
+    header.site-head p{
+      margin:0.5rem 0 0;
+      font-size:1rem;
+      opacity:0.95;
+      text-shadow: 0 6px 14px rgba(255,255,255,0.12);
+      transform: translateY(0.5rem);
+    }
+
+    /* Banner section with fixed background image */
+    .banner{
+      height: 380px;
+      border-radius: var(--radius);
+      overflow:hidden;
+      position:relative;
+      margin:1.5rem 0;
+      box-shadow: 0 10px 30px rgba(12,12,30,0.18);
+      background-image: linear-gradient(rgba(10,10,30,0.25), rgba(10,10,30,0.25)), url('https://images.unsplash.com/photo-1503264116251-35a269479413?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=9a6d9fbbf8a9f2e69b8ca77b6cea7ee8');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* fixed background for parallax-like feel */
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+    }
+
+    .banner .banner-inner{
+      width:100%;
+      padding:2rem;
+      backdrop-filter: blur(4px) saturate(1.05);
+      text-align:center;
+    }
+
+    .banner h2{
+      margin:0 0 0.5rem;
+      font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      transform: translateY(-6px) rotate(-0.5deg) scale(1.01);
+      text-shadow: 0 10px 30px rgba(0,0,0,0.45), 0 1px 0 rgba(255,255,255,0.03);
+    }
+
+    .banner p{margin:0;font-size:1rem; opacity:0.95}
+
+    /* Three boxes area: demonstrates relative, absolute, fixed positioning */
+    .boxes{
+      margin-top:2rem;
+      min-height:240px;
+      position:relative; /* containing block for absolutely positioned child */
+      padding:2rem;
+      background: rgba(255,255,255,0.06);
+      border-radius: 12px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:1.25rem;
+    }
+
+    /* Box A: normal flow (relative) */
+    .box-a{
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      padding:1.1rem;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.06);
+      position:relative; /* positioned relative but still in normal flow */
+      transform: translateY(0);
+    }
+
+    /* Box B: absolutely positioned inside .boxes (positioned relative) */
+    .box-b{
+      position:absolute;
+      right:2rem;
+      top:30px;
+      width:280px;
+      padding:1rem;
+      border-radius:10px;
+      background:linear-gradient(135deg, rgba(106,0,244,0.14), rgba(0,200,255,0.06));
+      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 8px 30px rgba(10,10,30,0.14);
+      backdrop-filter: blur(6px);
+      transform: rotate(-1.2deg);
+    }
+
+    /* Box C: fixed to the viewport (always visible) */
+    .box-c{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      width:180px;
+      padding:0.85rem;
+      border-radius:12px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.92));
+      color:#062;
+      border:1px solid rgba(10,10,30,0.05);
+      box-shadow: 0 6px 20px rgba(10,10,30,0.12);
+      font-weight:600;
+      transform: translateZ(0);
+    }
+
+    /* Small utility styles */
+    .muted{opacity:0.78; font-size:0.95rem}
+
+    /* Responsive adjustments */
+    @media (max-width:880px){
+      .boxes{grid-template-columns:1fr;}
+      .box-b{position:static; width:auto; transform:none;}
+      .banner{height:260px}
+    }
+
+    /* Respect reduced motion preference */
+    @media (prefers-reduced-motion: reduce){
+      *{animation:none!important; transition:none!important}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <header class="site-head">
+      <h1>Colorful Gradient Homepage</h1>
+      <p class="muted">Text shadows, transforms, Google Fonts, a fixed banner, and three positioned boxes.</p>
+    </header>
+
+    <section class="banner" aria-label="Hero banner with fixed background">
+      <div class="banner-inner">
+        <h2>Fixed Background Banner</h2>
+        <p class="muted">The banner image is fixed (background-attachment: fixed). Try scrolling to see the effect.</p>
+      </div>
+    </section>
+
+    <section class="boxes" aria-label="Positioning demo">
+
+      <!-- Box A: relative / normal flow -->
+      <div class="box-a">
+        <h3 style="margin-top:0;">Box A — Relative (normal flow)</h3>
+        <p class="muted">This box sits in the document flow. It uses <code>position: relative</code> so you can apply offsets without removing it from the flow.</p>
+      </div>
+
+      <!-- Box B: absolute positioned inside .boxes -->
+      <div class="box-b">
+        <h4 style="margin:0 0 .4rem 0;">Box B — Absolute</h4>
+        <p class="muted" style="margin:0;">This box is absolutely positioned relative to the <code>.boxes</code> container (which is <code>position: relative</code>).</p>
+      </div>
+
+      <!-- another content block so grid has two items visually -->
+      <div style="background:transparent; padding:1rem; border-radius:10px; border:1px dashed rgba(255,255,255,0.04);">
+        <h3 style="margin-top:0">Content block</h3>
+        <p class="muted">Extra content to show layout. Resize the window to see responsive behavior.</p>
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- Box C: fixed to the viewport -->
+  <div class="box-c" role="status" aria-live="polite">
+    Live: fixed box (always visible)
+  </div>
+
+</body>
+</html>
