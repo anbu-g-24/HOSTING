@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        
+        }
+
+
+        .section{
+            background: #be9292;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        .block{
+            display: block;
+            background-color: steelblue;
+            color: white;
+            text-align: center;
+            margin: 15px 0;
+            line-height: 50px;
+            
+        }
+        .inline{
+            display: inline;
+            background-color: rgb(29, 29, 218);
+            color: white;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        .inline-block{
+            background-color: rgb(126, 98, 3);
+          margin: 15px;
+          line-height: 50px;
+          color: white;
+          text-align: center;
+
+        }
+
+        .flex-container{
+            display: flex;
+           
+        }
+
+        .flex{
+            flex: 1;
+            background-color: #5c0000;
+            color: white;
+            text-align: center;
+            margin: 15px;
+            line-height: 50px;
+        }
+
+
+        .grid-container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            
+        }
+        .grid{
+            background-color: green;
+            color: white;
+            text-align: center;
+            margin: 15px;
+            line-height: 50px;
+            
+        }
+       
+   
+      
+      
+    </style>
+</head>
+<body>
+
+    <h1>CSS DISPLAY PROPERTY EXPERIMENT</h1>
+
+    <div class="section">
+        <h2>Block Element</h2>
+        <div class="block">block 1</div>
+        <div class="block">block</div>
+    </div>
+
+    <div class="section">
+        <h2>Inline Element</h2>
+        <div class="inline">Inline 1</div>
+        <div class="inline">Inline 2</div>
+    </div>
+
+    <div class="section">
+
+        <h2>Inline-block</h2>
+        <div class="inline-block">inline-block 1</div>
+        <div class="inline-block">inline-block 2</div>
+    </div>
+
+    <div class="section">
+        <h2>Flex Display</h2>
+        <div class="flex-container">
+        <div class="flex">Flex 1</div>
+        <div class="flex">Flex 2</div>
+        <div class="flex">Flex 3</div>
+        </div>
+    </div>
+
+    <div class="section">
+
+        <h2>Grid Layout</h2>
+        <div class="grid-container">
+        <div class="grid">Grid 1</div>
+        <div class="grid">Grid 2</div>
+        <div class="grid">Grid 3</div>
+        <div class="grid">Grid 4</div>
+        </div>
+        
+
+    </div>
+
+   
+    
+
+   
+</body>
+</html>

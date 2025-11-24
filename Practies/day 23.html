@@ -1,0 +1,902 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simple E Commerce Template</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* --- Custom styles (keeps everything in one file) --- */
+    :root{
+      --brand:#0d6efd;
+      --muted:#6c757d;
+    }
+    body{font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+    .site-header{box-shadow: 0 2px 6px rgba(13,110,253,.06);}
+    .hero{background: linear-gradient(90deg, rgba(13,110,253,.08), rgba(13,110,253,.02));padding:48px 0}
+    .product-card{transition:transform .15s ease, box-shadow .15s ease}
+    .product-card:hover{transform:translateY(-6px); box-shadow:0 8px 24px rgba(0,0,0,.08)}
+    .price{font-weight:700;}
+    .strike{color:var(--muted); text-decoration:line-through; font-weight:500}
+    .badge-sale{background:#dc3545; color:#fff}
+    .star{color:#ffb400}
+    .footer{background:#f8f9fa;padding:40px 0}
+    .product-img{height:200px; object-fit:cover}
+    @media (max-width:576px){ .product-img{height:160px} }
+    /* small util */
+    .muted-small{color:var(--muted); font-size:.9rem}
+  </style>
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="#0d6efd"></rect><path d="M7 12l3 3 7-8" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="fw-bold">ShopOne</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+
+          <form class="d-flex me-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search products..." aria-label="Search">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
+          </form>
+
+          <div class="d-flex align-items-center gap-2">
+            <button class="btn btn-outline-primary" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas">
+              Cart <span class="badge bg-primary ms-1">3</span>
+            </button>
+            <a class="btn btn-primary" href="#login">Sign in</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1 class="display-5">Beautiful products. Simple shopping.</h1>
+          <p class="lead text-muted">A minimal e commerce template built with only HTML, CSS and Bootstrap — perfect for demos and technical presentations.</p>
+          <div class="mt-4">
+            <a href="#products" class="btn btn-primary btn-lg me-2">Shop Now</a>
+            <a href="#about" class="btn btn-outline-secondary btn-lg">Learn More</a>
+          </div>
+          <div class="mt-4 muted-small">Tip: Use this template as a starting point — you can plug it into any static host.</div>
+        </div>
+        <div class="col-lg-6 text-center">
+          <img src="https://images.unsplash.com/photo-1606813909395-2e0f28a6f2d6?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="shop hero" class="img-fluid rounded shadow-sm" style="max-height:320px; object-fit:cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories quick filter -->
+  <section class="py-4">
+    <div class="container d-flex gap-2 flex-wrap">
+      <button class="btn btn-outline-secondary">All</button>
+      <button class="btn btn-outline-secondary">Electronics</button>
+      <button class="btn btn-outline-secondary">Home</button>
+      <button class="btn btn-outline-secondary">Fashion</button>
+      <button class="btn btn-outline-secondary">Books</button>
+      <button class="btn btn-outline-secondary">Toys</button>
+    </div>
+  </section>
+
+  <!-- Product grid -->
+  <section id="products" class="py-5">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="h4 mb-0">Featured Products</h2>
+        <div class="muted-small">Showing <strong>8</strong> products</div>
+      </div>
+
+      <div class="row g-4">
+        <!-- product card template - repeat with different data -->
+
+        <!-- Product 1 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card product-card h-100">
+            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" class="card-img-top product-img" alt="Headphones">
+            <div class="card-body d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <h5 class="card-title mb-0">Wireless Headphones</h5>
+                <span class="badge badge-sale">Sale</span>
+              </div>
+              <p class="muted-small mb-2">Noise-cancelling • 20h battery</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <div>
+                  <div class="price">₹3,499</div>
+                  <div class="strike">₹4,299</div>
+                </div>
+                <div class="d-flex gap-2">
+                  <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product="Wireless Headphones">Quick view</button>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">Add</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card product-card h-100">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" class="card-img-top product-img" alt="Shoes">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Running Sneakers</h5>
+              <p class="muted-small mb-2">Lightweight • Breathable</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <div>
+                  <div class="price">₹2,199</div>
+                </div>
+                <div class="d-flex gap-2">
+                  <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product="Running Sneakers">Quick view</button>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">Add</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card product-card h-100">
+            <img src="https://images.unsplash.com/photo-1526178615420-8a1d0f41a2f9?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" class="card-img-top product-img" alt="Coffee Maker">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Café Coffee Maker</h5>
+              <p class="muted-small mb-2">Compact • Programmable</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <div>
+                  <div class="price">₹4,999</div>
+                </div>
+                <div class="d-flex gap-2">
+                  <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product="Café Coffee Maker">Quick view</button>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">Add</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card product-card h-100">
+            <img src="https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" class="card-img-top product-img" alt="Backpack">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Daily Backpack</h5>
+              <p class="muted-small mb-2">Water resistant • 20L</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <div>
+                  <div class="price">₹1,299</div>
+                </div>
+                <div class="d-flex gap-2">
+                  <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product="Daily Backpack">Quick view</button>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">Add</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card product-card h-100">
+            <img src="https://images.unsplash.com/photo-1587740896333-5d1f7f6a6efb?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" class="card-img-top product-img" alt="Smartwatch">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Smartwatch</h5>
+              <p class="muted-small mb-2">Fitness • Notifications</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <div>
+                  <div class="price">₹5,999</div>
+                </div>
+                <div class="d-flex gap-2">
+                  <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product="Smartwatch">Quick view</button>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">Add</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card product-card h-100">
+            <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" class="card-img-top product-img" alt="Lamp">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Designer Lamp</h5>
+              <p class="muted-small mb-2">Warm LED • Touch control</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <div>
+                  <div class="price">₹2,499</div>
+                </div>
+                <div class="d-flex gap-2">
+                  <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product="Designer Lamp">Quick view</button>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">Add</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card product-card h-100">
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" class="card-img-top product-img" alt="Sunglasses">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Aviator Sunglasses</h5>
+              <p class="muted-small mb-2">UV protection • Metal frame</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <div>
+                  <div class="price">₹899</div>
+                </div>
+                <div class="d-flex gap-2">
+                  <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product="Aviator Sunglasses">Quick view</button>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">Add</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card product-card h-100">
+            <img src="https://images.unsplash.com/photo-1526178615420-8a1d0f41a2f9?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" class="card-img-top product-img" alt="Notebook">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-1">Hardcover Notebook</h5>
+              <p class="muted-small mb-2">120 pages • A5</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <div>
+                  <div class="price">₹249</div>
+                </div>
+                <div class="d-flex gap-2">
+                  <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product="Hardcover Notebook">Quick view</button>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">Add</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick view modal (Bootstrap) -->
+  <div class="modal fade" id="quickViewModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Product quick view</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-3">
+            <div class="col-md-6 text-center">
+              <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="product" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+              <h4 id="modalProductTitle">Product name</h4>
+              <p class="muted-small">Short product description and highlights go here.</p>
+              <div class="my-3">
+                <div class="price">₹1,299</div>
+                <div class="strike">₹1,599</div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Quantity</label>
+                <select class="form-select w-50" aria-label="Select quantity">
+                  <option value="1" selected>1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+              <div class="d-flex gap-2">
+                <button class="btn btn-primary">Add to cart</button>
+                <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Offcanvas -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+    <div class="offcanvas-header">
+      <h5 id="cartOffcanvasLabel">Your Cart</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column">
+      <div class="list-group mb-3">
+        <div class="list-group-item d-flex justify-content-between align-items-start">
+          <div>
+            <div class="fw-bold">Wireless Headphones</div>
+            <div class="muted-small">Qty: 1</div>
+          </div>
+          <div class="text-end">
+            <div>₹3,499</div>
+            <div class="muted-small">Remove</div>
+          </div>
+        </div>
+        <div class="list-group-item d-flex justify-content-between align-items-start">
+          <div>
+            <div class="fw-bold">Running Sneakers</div>
+            <div class="muted-small">Qty: 1</div>
+          </div>
+          <div class="text-end">
+            <div>₹2,199</div>
+            <div class="muted-small">Remove</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-auto">
+        <div class="d-flex justify-content-between mb-2">
+          <div class="muted-small">Subtotal</div>
+          <div class="fw-bold">₹5,698</div>
+        </div>
+        <div class="d-grid">
+          <button class="btn btn-primary btn-lg">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About / Footer -->
+  <footer class="footer mt-5">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-md-4">
+          <h5>ShopOne</h5>
+          <p class="muted-small">A minimal demo e commerce site built with HTML, CSS and Bootstrap for educational and presentation use.</p>
+        </div>
+        <div class="col-md-2">
+          <h6>Company</h6>
+          <ul class="list-unstyled muted-small">
+            <li>About</li>
+            <li>Careers</li>
+            <li>Press</li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h6>Support</h6>
+          <ul class="list-unstyled muted-small">
+            <li>Help center</li>
+            <li>Shipping</li>
+            <li>Returns</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6>Contact</h6>
+          <p class="muted-small">email: hello@example.com<br>phone: +91 98765 43210</p>
+        </div>
+      </div>
+      <div class="text-center mt-4 muted-small">© <span id="year"></span> ShopOne. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Small bits of non-critical UI wiring using Bootstrap's own events (no external libs)
+    // Update footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // When a Quick view button opens the modal, update the product title dynamically
+    var quickViewModal = document.getElementById('quickViewModal');
+    quickViewModal.addEventListener('show.bs.modal', function (event) {
+      var button = event.relatedTarget; // Button that triggered the modal
+      var productName = button.getAttribute('data-product') || 'Product';
+      quickViewModal.querySelector('#modalProductTitle').textContent = productName;
+    });
+  </script>
+</body>
+</html>
+:
+Deepseek code:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEasy - Online Shopping</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3498db;
+            --secondary: #2c3e50;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            color: var(--primary) !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            margin-bottom: 40px;
+        }
+        
+        .product-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 20px;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .product-img {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .price {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background-color: #2980b9;
+            border-color: #2980b9;
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .category-card {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .category-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .category-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px;
+            margin: 0;
+        }
+        
+        .footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+        
+        .footer a {
+            color: var(--light);
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: var(--primary);
+        }
+        
+        .badge-sale {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--accent);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .cart-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .newsletter {
+            background-color: var(--primary);
+            color: white;
+            padding: 40px 0;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-shopping-bag me-2"></i>ShopEasy
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Products</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Electronics</a></li>
+                            <li><a class="dropdown-item" href="#">Fashion</a></li>
+                            <li><a class="dropdown-item" href="#">Home & Kitchen</a></li>
+                            <li><a class="dropdown-item" href="#">Beauty</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Deals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <div class="input-group me-3">
+                        <input type="text" class="form-control" placeholder="Search products...">
+                        <button class="btn btn-outline-primary" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="btn-group">
+                        <a href="#" class="btn btn-outline-primary position-relative">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-badge">3</span>
+                        </a>
+                        <a href="#" class="btn btn-outline-primary">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Summer Sale Up To 50% Off</h1>
+            <p class="lead mb-4">Discover amazing deals on top brands. Limited time offer!</p>
+            <a href="#" class="btn btn-primary btn-lg">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="container mb-5">
+        <h2 class="section-title">Shop By Category</h2>
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Electronics">
+                    <h3 class="category-title">Electronics</h3>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Fashion">
+                    <h3 class="category-title">Fashion</h3>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Home & Kitchen">
+                    <h3 class="category-title">Home & Kitchen</h3>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Beauty">
+                    <h3 class="category-title">Beauty</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="container mb-5">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="row">
+            <!-- Product 1 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="card product-card">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top product-img" alt="Wireless Headphones">
+                        <span class="badge-sale">Sale</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Wireless Headphones</h5>
+                        <p class="card-text">Premium sound quality with noise cancellation.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="price">$129.99</span>
+                            <span class="text-muted text-decoration-line-through">$159.99</span>
+                        </div>
+                        <div class="mt-3">
+                            <button class="btn btn-primary w-100">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="card product-card">
+                    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top product-img" alt="Smart Watch">
+                    <div class="card-body">
+                        <h5 class="card-title">Smart Watch</h5>
+                        <p class="card-text">Track your fitness and stay connected.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="price">$199.99</span>
+                        </div>
+                        <div class="mt-3">
+                            <button class="btn btn-primary w-100">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="card product-card">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top product-img" alt="Smartphone">
+                        <span class="badge-sale">New</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Latest Smartphone</h5>
+                        <p class="card-text">Advanced camera and long-lasting battery.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="price">$899.99</span>
+                        </div>
+                        <div class="mt-3">
+                            <button class="btn btn-primary w-100">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="card product-card">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top product-img" alt="Running Shoes">
+                    <div class="card-body">
+                        <h5 class="card-title">Running Shoes</h5>
+                        <p class="card-text">Comfortable and durable for all terrains.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="price">$79.99</span>
+                            <span class="text-muted text-decoration-line-through">$99.99</span>
+                        </div>
+                        <div class="mt-3">
+                            <button class="btn btn-primary w-100">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4">
+            <a href="#" class="btn btn-outline-primary">View All Products</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container mb-5">
+        <div class="row text-center">
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="feature-icon">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+                <h5>Free Shipping</h5>
+                <p class="text-muted">On orders over $50</p>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="feature-icon">
+                    <i class="fas fa-undo-alt"></i>
+                </div>
+                <h5>Easy Returns</h5>
+                <p class="text-muted">30-day return policy</p>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="feature-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h5>Secure Payment</h5>
+                <p class="text-muted">100% secure payment</p>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h5>24/7 Support</h5>
+                <p class="text-muted">Dedicated customer support</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container text-center">
+            <h2 class="mb-3">Subscribe to Our Newsletter</h2>
+            <p class="mb-4">Get the latest updates on new products and upcoming sales</p>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Your email address">
+                        <button class="btn btn-dark" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>ShopEasy</h5>
+                    <p>Your one-stop destination for all your shopping needs. Quality products at affordable prices.</p>
+                    <div class="social-links">
+                        <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Customer Service</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Track Your Order</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 123 Main Street, City, Country</li>
+                        <li><i class="fas fa-phone me-2"></i> +1 234 567 8900</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@shopeasy.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2023 ShopEasy. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>Accepted Payment Methods:</p>
+                    <i class="fab fa-cc-visa me-2"></i>
+                    <i class="fab fa-cc-mastercard me-2"></i>
+                    <i class="fab fa-cc-paypal me-2"></i>
+                    <i class="fab fa-cc-apple-pay me-2"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

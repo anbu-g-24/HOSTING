@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h2 {
+            color: brown;
+            background-color: lightcoral;
+            display: block;
+            text-align: center;
+            
+        }
+
+        .loader {
+            width: 100px;
+            height: 100px;
+            border: 10px solid rgb(208, 206, 206);
+            border-radius: 50%;
+            border-top-color: blue;
+            margin-left: 40%;
+            animation: spin 1s linear infinite;
+
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg)
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Task-2 */
+
+        .flip-card {
+            width: 200px;
+            height: 100px;
+            perspective: 1000px;
+            margin-bottom: 40px;
+    
+        }
+
+        .flip-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.7s ease;
+        }
+
+        .flip-card:hover .flip-inner {
+            transform: rotateY(180deg);
+        }
+
+        .front,
+        .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+
+        }
+
+        .front {
+            background: rgb(117, 30, 30);
+            color: rgb(0, 0, 0);
+        }
+
+        .back {
+            background: rgb(0, 0, 0);
+            transform: rotateY(180deg);
+            color: rgb(255, 255, 255);
+        }
+
+        /* task-3 */
+        .progress-box{
+        width: 300px;
+        height: 20px;
+        background: #eee;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 40px;
+    }
+    .progress-fill{
+        height: 100%;
+        width: 0%;
+        background: rgb(123, 123, 123);
+        animation: fill 5s forwards;
+    }
+    @keyframes fill{
+        0%{ width: 0%; }
+        100%{ width: 100%; }
+    }
+
+
+
+    .progress-container {
+      width: 100%;
+      height: 20px;
+      background-color: #eee;
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 2px auto;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0;
+      background-color: #4caf50;
+      animation: fill 2s ease-out forwards;
+    }
+
+    @keyframes fill {
+      0%{
+        width:0%;
+      }
+      100%{
+        width: 100%;
+      }
+    }
+
+    </style>
+</head>
+
+<body>
+    <h2>Loader Animation</h2>
+    <div class="loader"></div>
+
+    <h2>card</h2>
+    <div class="flip-card">
+        <div class="flip-inner">
+            <div class="front">Front</div>
+            <div class="back">Back</div>
+        </div>
+    </div>
+
+    <h2>Progress Bar Animation</h2>
+<div class="progress-box">
+    <div class="progress-fill"></div>
+</div>
+
+<div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+
+<h2>Bouncing Ball</h3>
+<div class="ball"></div>
+  
+<div></div>
+</body>
+
+</html>
