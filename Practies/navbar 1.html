@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portfolio Using Grid Template Areas</title>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+  body {
+    background: #f3f4f6;
+    color: #111;
+  }
+
+  
+  .container {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "hero hero"
+      "projects about"
+      "footer footer";
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  header {
+    grid-area: header;
+    background: #0ea5e9;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+
+  header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+
+  .hero {
+    grid-area: hero;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  
+  .projects {
+    grid-area: projects;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .project {
+    background: #e2e8f0;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+ 
+  .about {
+    grid-area: about;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  
+  footer {
+    grid-area: footer;
+    background: #0f172a;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  
+  @media (max-width: 900px) {
+    .container {
+      grid-template-areas:
+        "header"
+        "hero"
+        "projects"
+        "about"
+        "footer";
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+ 
+  <header>
+    <div class="logo">My Portfolio</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  
+  <section class="hero">
+    <h1>Hello, I'm Anbu</h1>
+    <p>A Front-End Developer passionate about clean UI & creative web experiences.</p>
+  </section>
+
+  
+  <section class="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project">Project 1</div>
+      <div class="project">Project 2</div>
+      <div class="project">Project 3</div>
+      <div class="project">Project 4</div>
+    </div>
+  </section>
+
+  
+  <aside class="about">
+    <h2>About Me</h2>
+    <p>
+      I build modern, responsive websites using HTML, CSS, JavaScript, and frameworks like React. 
+      I love UI/UX and designing smooth user experiences.
+    </p>
+  </aside>
+
+  
+  <footer>
+    © 2025 — All Rights Reserved | Designed by Anbu
+  </footer>
+
+</div>
+
+</body>
+</html>
+
