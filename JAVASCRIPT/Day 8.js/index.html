@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    
+    <h1 id="title">Hello Dom</h1>
+
+    <p id="Msg">Welcome to JavaScript</p>
+
+    <script>
+        const heading = document.getElementById("title");
+        heading.style.color = "blue";
+        console.log(heading);
+
+        const para =document.querySelector("Msg");
+        para.style.fontSize = "100px";
+        console.log(para);
+
+
+        heading = document.getElementById("title");
+        // const para = document.getElementById("Msg");
+
+         const ar= heading.textContent = "Upload the File";
+        // heading.innerHTML = `<em>ar</em>`;
+   
+        
+
+
+        
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,22 +1,39 @@
-// Creating unique user IDs using Symbols
-let user1 = {
-    id: Symbol("userID"),
-    name: "Anbu"
+// // Creating unique user IDs using Symbols
+// const userId1 = Symbol("user");
+// const userId2 = Symbol("user"); 
+// // Creating user objects
+// let user1 = {
+//   name: "Alice",
+//   userId1: "ID_001"
+// };
+
+// let user2 = {
+//   name: "Anbu",
+//   userId2: "ID_002"
+// };
+
+// // Display users and their unique IDs
+// console.log("User 1 Name:", user1.name);
+// console.log("User 1 ID:", user1.userId1);
+
+// console.log("User 2 Name:", user2.name);
+// console.log("User 2 ID:", user2.userId2);
+
+// // Check uniqueness
+// console.log(userId1 === userId2); // false (always unique)
+
+
+const userId1 = Symbol("user");
+const userId2 = Symbol("user");
+
+let user1 ={
+  name:"Anbu",
+  userId1:"ID_001"
 };
-
-let user2 = {
-    id: Symbol("userID"),
-    name: "Kumar"
+let user2 ={
+  name:"Kumar", 
+  userId2:"ID_002",
 };
-
-let user3 = {
-    id: Symbol("userID"),
-    name: "Priya"
-};
-
-console.log(user1.name + " ID:", user1.id);
-console.log(user2.name + " ID:", user2.id);
-console.log(user3.name + " ID:", user3.id);
+console.log("user 1 name:",user1.name );
 
 
-console.log("Are user1 and user2 IDs same?", user1.id === user2.id);

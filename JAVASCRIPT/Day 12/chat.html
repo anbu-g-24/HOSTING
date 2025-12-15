@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   <button id="btn">Click Me</button>
+
+<script>
+  const btn = document.getElementById("btn");
+
+  btn.addEventListener("click", function () {
+    alert("Button clicked!");
+  });
+
+  btn.addEventListener("mouseenter", function () {
+    btn.style.backgroundColor = "green";
+  });
+
+  btn.addEventListener("mouseleave", function () {
+    btn.style.backgroundColor = "";
+  });
+</script>
+
+</body>
+</html>

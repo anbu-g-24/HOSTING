@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+
+   <style>
+    *{
+        background-color: rgb(20, 38, 231);
+
+        .msg{
+            color: white;
+            font-size: large;
+            font-family: 'Courier New', Courier, monospace;
+            
+        }
+    }
+   </style>
+</head>
+<body>
+    <h2 id="title">Hello DOM</h2>
+    <p class="msg">Welcome to JAVASCRIPT</p>
+    <p id="box">This is box</p>
+    <ul id="removeMe">Remove the sentance its waste</ul>
+
+
+
+
+
+    <script>
+        const heading = document.getElementById("title");
+        console.log(heading);
+        
+        const para = document.querySelector(".msg");
+        console.log(para);
+
+        const boxx = document.getElementById("box");
+
+        document.getElementById("removeMe").textContent="";
+
+   
+
+        heading.style.color ="navy";
+        heading.style.background = "lightgreen";
+        heading.style.textAlign = "center";
+        heading.style.padding ="20px";
+        heading.style.webkitBorderRadius = "6px  ";
+
+        boxx.style.fontSize ="large";
+        boxx.style.color = "white";
+
+
+
+
+    </script>
+    
+</body>
+</html>

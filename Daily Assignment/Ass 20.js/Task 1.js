@@ -1,28 +1,34 @@
-// 1. String
-let name = "Anbu";
 
-// 2. Number
-let age = 21;
+// 1. number
+let age=21;
+console.log(age);
 
-// 3. BigInt
-let largeNumber = 9007199254740991n;
 
-// 4. Boolean
-let isStudent = true;
+// 2. String
+let name="Anbu";
+console.log(name);
 
-// 5. Undefined
-let middleName; 
-// 6. Null
-let lastName = null;
+ 
+// 3. boolian
+let goodBoy=true;
+console.log(goodBoy);
+
+// 4. Undefined
+let city;
+console.log(city);
+
+
+// 5. null
+let address=null;
+console.log(address);
+
+// 6. bigInt
+let bigNumber =123456789086566475475n;
+console.log(bigNumber);
+
 
 // 7. Symbol
-let userID = Symbol("user1ID");
+let pid=Symbol('id');
+console.log(pid);
 
-// Display all variables
-console.log("String:", name);
-console.log("Number:", age);
-console.log("BigInt:", largeNumber);
-console.log("Boolean:", isStudent);
-console.log("Undefined:", middleName);
-console.log("Null:", lastName);
-console.log("Symbol:", userID);
+

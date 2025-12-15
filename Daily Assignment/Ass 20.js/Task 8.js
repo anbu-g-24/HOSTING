@@ -1,18 +1,18 @@
-// Boolean to track login status
-let isLoggedIn = false; 
+// let isLoggedIn = true;   // change to false to test
+
+// if (isLoggedIn) {
+//   console.log("Welcome");
+// } else {
+//   console.log("Please Login");
+// }
 
 
-if (isLoggedIn) {
-    console.log("Welcome!");
-} else {
-    console.log("Please Login");
+let isLoggedIn =true;
+
+if (isLoggedIn){
+console.log("Welcome");
+
 }
-
-
-isLoggedIn = true;
-
-if (isLoggedIn) {
-    console.log("Welcome!");
-} else {
-    console.log("Please Login");
+else{
+     console.log("Please Login");
 }

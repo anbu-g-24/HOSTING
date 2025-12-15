@@ -1,16 +1,20 @@
-// Product prices and quantities
-let product1Price = 499; // number
-let product1Qty = 2;     // number
 
-let product2Price = 299; // number
-let product2Qty = 3;     // number
 
-// Calculate total price
-let total = (product1Price * product1Qty) + (product2Price * product2Qty); // number
+// some prices are stings and some are numbers
 
-// Convert total to string for display
-let totalString = total.toString();
+let price1 ="24";
+let price2 = 12;
+let price3 = "2004";
 
-// Display the cart total
-console.log("Cart Total: ₹" + totalString);
- 
+// Convert string values gto numbers
+
+let num1 = Number(price1);
+let num2 = Number(price2);
+let num3 = Number(price3)
+
+// Calculate total
+let total = num1+ num2+ num3;
+
+// Display result
+console.log("total:"+total);
+

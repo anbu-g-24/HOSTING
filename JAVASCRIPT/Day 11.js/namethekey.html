@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>press any key</title>
+</head>
+<body>
+    <p>press any key name will appear</p>
+
+    <input type=" text" id="myinput"/>
+
+    <p>Key press:<strong id="output">None</strong></p>
+
+    <script>
+        const outputElement = document.getElementById("output");
+        document.addEventListener("keydown", (event)=>{
+         const pressedkey =  event.key;
+         
+         outputElement.textContent = pressedkey;
+        });
+
+        document.addEventListener("keyup", (event)=> {})
+    </script>
+
+    
+    
+</body>
+</html> 
+
+
+   
+   

@@ -57,5 +57,3 @@ console.log(typeof data);
 
 
 
-let today =new date();
-console.log(today);
