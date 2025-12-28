@@ -15,5 +15,5 @@ function checkGrade(marks){
     }
 }
 
-let studentMarks = 86;
+let studentMarks = 96;
 console.log("Your grade is:", checkGrade(studentMarks));

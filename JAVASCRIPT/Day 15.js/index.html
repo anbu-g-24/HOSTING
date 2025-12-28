@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doc</title>
+</head>
+<body>
+
+
+    <button onclick="showUser()">Show name</button>
+    <p id="output"></p>
+
+    <script>
+
+        function showUser(){
+
+        fetch("https://api.github.com/users/arun-cloud-dev/followers")
+.then(Response => Response.json())
+.then(data=>{
+    data.forEach(n => {
+        const name = n.login  
+        document.getElementById("output").innerText +=name+"\n"
+    });
+    
+})
+
+.catch(Error => console.log(Error));
+
+        }
+            
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+

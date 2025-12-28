@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>Input Validation project</h3>
+
+    <input type="text" id="name" placeholder="Enter your name"><br>  <br>
+    
+    <input type="text" id="email" placeholder="Enter you email"><br><br>
+
+    <button onclick="validate()">Submit</button>
+
+    <p id="msg"></p>
+
+    <script>
+        function validate(){
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let msg = document.getElementById("msg");
+
+
+            if(name===""||email===""){
+                msg.innerText=" ❌All fields are required";
+                return;  
+            }
+
+            if(name.length <3){
+                msg.innerText =" ❌Name must be at least 3 characters";
+                return;
+            } 
+
+            if(!email.includes("@")){
+                msg.innerText= " ❌Enter a valid email";
+            }
+            msg.innerText="✅ Form submitted successfully"
+        }
+    </script>
+    
+</body>
+</html>

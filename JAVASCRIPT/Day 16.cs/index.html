@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+          
+    <button onclick="getLocation()">Get my location</button>
+
+<p id="output"></p>
+
+<script>
+function getLocation() {
+  if (!navigator.geolocation) {
+    document.getElementById("output").textContent =
+      "Geolocation is not supported by this browser.";
+    return;
+  }
+
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+      document.getElementById("output").textContent =
+        `Latitude: ${lat}, Longitude: ${lon}`;
+    },
+    (error) => {
+      document.getElementById("output").textContent =
+        "Permission denied or location unavailable.";
+    }
+  );
+}
+</script>
+
+    
+</body>
+</html>

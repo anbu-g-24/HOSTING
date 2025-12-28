@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json</title>
+</head>
+<body>
+    <button onclick="showUser()">showe users</button>
+    <p id="output"></p>
+
+    <script>
+        function showUser(){
+             const JsonData =  `{"name":"Anbu", "age":"21", "city":"Chennai"}`;
+            const user = JSON.parse(JsonData);
+
+             document.getElementById("output").innerText =
+             `Name: ${user.name}, Age: ${user.age}, City: ${user.city}`;   
+
+        };   
+
+            
+
+    </script>
+    
+</body>
+</html>
+
+
+

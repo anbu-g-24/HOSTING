@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .menu{
+            position: relative;
+            display:inline-block ;
+        }
+         .submenu{
+            display: none;
+            position: absolute;
+            top: 25px;
+            left: 0;
+            background:#f2f2f2 ;
+            padding: 10px;
+            border-radius: 4px;
+            
+        }
+
+         .submenu a{
+            display:block;
+            padding: 5px 0;
+            text-decoration: none;
+            color: black;
+        } 
+    </style>
+</head>
+<body>
+
+    <div class="menu">
+        <h2 class="menu-title">Menu</h2>
+        <div class="submenu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+
+    </div>
+
+    <script>
+        const menu = document.querySelector(".menu");
+        const submenu = document.querySelector(".submenu");
+        
+        menu.addEventListener("mouseenter",()=>{
+            submenu.style.display ="block";
+        });
+
+        menu.addEventListener("mouseleave",()=>{
+            submenu.style.display="none";
+        });
+    </script>
+    
+</body>
+</html>  

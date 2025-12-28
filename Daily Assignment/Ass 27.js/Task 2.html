@@ -1,0 +1,72 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            background-color: navy;
+        }
+
+        h2{
+            color: white ;
+            font-size: bold;
+            font-size:30px ;
+            text-align: center;
+            align-items: center;
+            margin-top:20% ;
+        }
+        p{
+            color: white;
+            font-size: 30px;
+            text-align: center;
+
+        }
+        p:hover{
+            color:red ;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Welcome to My webpage</h2>
+
+    <p>change text color on hover</p>
+    
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change color</title>
+</head>
+<body>
+
+    <p id="text"
+   onmouseover="changeColor()"
+   onmouseout="resetColor()">
+   Hover over this text
+</p>
+
+<script>
+  function changeColor() {
+    document.getElementById("text").style.color = "blue";
+  }
+
+  function resetColor() {
+    document.getElementById("text").style.color = "black";
+  }
+</script>
+
+
+    
+</body>
+</html>

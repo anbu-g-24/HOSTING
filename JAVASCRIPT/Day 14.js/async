@@ -1,0 +1,29 @@
+=>mif are single threadeed app performs a long running are cup intensive task like complex calclulatiion 
+
+=> making the webpage or server and responsive until the task is complete.
+
+
+
+To achive multi threding
+
+ => to overcome the limations the single thread model modern java script environment offer api that allow developerts to offload task top seperate paralel threads.
+
+WEB
+
+=> Web browers are browsers api that allow you tpo run js in a background thread.
+
+
+USE case
+
+=> idle for performing heavey computation Eg; img processsing , large Data.
+
+COMMUNICATION
+
+=>workers can access the done directily .communication berween the main threa and the worekers happens via assincronise msg passing using post img
+
+
+ISCOLATION
+
+=> DATA IS COPIED VIA structured clone algorithm then sent between threads ensuring no concurrency problm with shaared memory throgh transferable objects you can be used to.COMMUNICATION
+
+

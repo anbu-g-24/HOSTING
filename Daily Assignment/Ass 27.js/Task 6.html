@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<body>
+
+    <button id="minus">-</button>
+    <span id="count">0</span>
+    <button id="plus">+</button>
+    <button id="reset"> Reset</button>
+
+    <script>
+        let count =0;
+
+        const display=document.getElementById("count");
+
+        document.getElementById("plus").addEventListener("click", ()=>{
+            count ++;
+            display.innerText = count;
+        });
+         
+        document.getElementById("minus").addEventListener("click",()=>{
+            count --;
+            display.innerText = count;
+        });
+
+        document.getElementById("reset").addEventListener("click", ()=>{
+            count=0;
+            display.innerText = count;
+        });
+    </script>
+
+
+
+
+
+    <!-- <button onclick="increase()">+</button>
+    <p id="count">0</p>
+
+    <script>
+        let count=0;
+
+        function increase(){
+            count ++;
+            document.getElementById("count").innerText = count;
+        }
+    </script> -->
+    
+</body>
+</html>

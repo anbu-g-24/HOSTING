@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=q">
+    <title>q1</title>
+</head>
+<body>
+
+    <h2>My List</h2>
+  <ul id="myList"></ul>
+
+  <script>
+    let list = document.getElementById("myList");
+
+// Array of items
+let items = ["Apple", "Banana", "Orange"];
+
+// Add items using appendChild
+items.forEach(function(item) {
+  let li = document.createElement("li");
+  li.textContent = item;
+  list.appendChild(li);
+});
+  </script>
+  
+</body>
+</html>

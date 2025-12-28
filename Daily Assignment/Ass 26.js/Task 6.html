@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background</title>
+</head>
+<body>
+
+    <button id="btn">Change Background</button>
+
+    <script>
+        document.getElementById("btn").addEventListener("click", function(){
+            document.body.style.background ="navy";
+        });
+    </script>
+    
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dark Mode</title>
+
+  <style>
+    body {
+      background-color: white;
+      color: black;
+      transition: 0.1s;
+    }
+
+    .dark {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<button id="darkBtn">Dark Mode</button>
+
+<script>
+  document.getElementById("darkBtn").addEventListener("click", function () {
+    document.body.classList.toggle("dark");
+  });
+</script>
+
+</body>
+</html>

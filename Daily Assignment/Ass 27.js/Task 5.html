@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <p onclick="showText(this)">Hello</p>
+    <p onclick="showText(this)">Welcome</p>
+    <p onclick="showText(this)">java Script</p>
+    <p onclick="showText(this)">java develaper</p>
+
+    <p id="output"></p>
+
+
+    <script>
+        // function showText(element){
+        //     document.getElementById("output").innerText = element.innerText;
+        // }
+        
+
+        document.addEventListener("click", (e) => {
+  document.getElementById("output").innerText = e.target.innerText;
+});
+
+    </script>
+    
+</body>
+</html>

@@ -8,9 +8,15 @@ for (let fruit of fruits) {
 
 let numbers =[1,2,3,4,5];
 for (let anbu of numbers){
-    console.log(A);
+    console.log(anbu);
+}
 
 
+
+let num = 5;
+
+for (let i = 1; i <= 10; i++) {
+  console.log(`${num} x ${i} = ${num * i}`);
 }
 
 
