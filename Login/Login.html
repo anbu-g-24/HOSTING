@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="login-box">
+    <h2>Login</h2>
+
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+
+    <button onclick="login()">Login</button>
+  </div>
+
+  <script >
+
+           function login() {
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  if (username === "Keeru" && password === "2824") {
+    window.location.href = "dashboard.html";
+  } else {
+    alert("Wrong username or password");
+  }
+}
+
+</script>
+  
+</body>
+</html>
+

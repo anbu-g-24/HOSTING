@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <style>
+
+    body{
+    background-color: rgb(2, 2, 143);
+    color: white;
+    text-align: center;
+
+     } 
+     form{
+        width: 20%;
+        margin-left: 500px;
+        margin-top: 250px;
+        border: 2px solid black;
+        border-radius:10px ;
+        background-color: white;
+        color: black;
+       padding: 30px;
+       
+     }   
+     
+       input{
+        width: 60%;
+        height: 25px;
+        border-radius: 10px;
+        
+       }
+       input:hover{
+        border: 2px solid blue;
+       }
+
+       button{
+        width: 30%;
+        height: 30px;
+        border-radius: 10px;
+        background-color: rgb(11, 188, 11);
+        color: black;
+        cursor: pointer;
+       }
+
+    </style>
+</head>
+<body>
+
+
+    <form action="">
+
+        
+    <h2>Login page</h2>
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter your name" required>
+        <br><br>
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your Password" required>
+        <br><br>
+        <button type="submit" onclick="Login()">
+
+            Login
+
+            
+        </button>
+    </form>
+
+
+     <script>
+        function Login(){
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if(username === "Anbu" && password === "Anbu123"){
+                alert("Login successful!");
+
+            }else{
+                alert("Invalid username or password.");
+            }
+        }
+
+        button.addEventListener("click", ()=>{
+            <a href="https://www.meesho.com/?srsltid=AfmBOorBDklbBAAaOetlE_CP4H0536zcHHMqbtKEvuQMkBJl5pWfCuna"></a>
+        })
+
+        
+    </script> 
+
+</body>
+</html>

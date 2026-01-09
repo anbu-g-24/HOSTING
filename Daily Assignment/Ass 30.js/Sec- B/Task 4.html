@@ -1,0 +1,11 @@
+ifference between callbacks and promises.
+
+=>| Feature             | Callbacks                                                | Promises                                                       |
+| ------------------- | -------------------------------------------------------- | -------------------------------------------------------------- |
+| **Definition**      | A function passed to another function and executed later | An object representing the future result of an async operation |
+| **Readability**     | Can become messy and nested (callback hell)              | Cleaner and easier to read                                     |
+| **Chaining**        | Hard to chain multiple async tasks                       | Easy to chain using `.then()`                                  |
+| **Error Handling**  | Difficult; errors must be handled in each callback       | Centralized with `.catch()` or `try...catch`                   |
+| **Maintainability** | Hard to maintain                                         | Easier to maintain                                             |
+| **Scalability**     | Not suitable for complex async flows                     | Suitable for multiple async operations                         |
+| **Modern Usage**    | Older style                                              | Modern and preferred                                           |

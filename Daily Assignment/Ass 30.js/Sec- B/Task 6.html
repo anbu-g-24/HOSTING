@@ -1,0 +1,12 @@
+Can await be used without async? Why?
+
+=>No, await cannot be used without async.
+
+Why?
+
+await pauses the execution of a function until a Promise is resolved or rejected.
+
+Only an async function can handle this pause.
+
+Using await outside an async function causes a syntax error.
+

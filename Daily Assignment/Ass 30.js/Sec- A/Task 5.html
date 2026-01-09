@@ -1,0 +1,12 @@
+Difference between callbacks and promises.
+
+=>| Feature             | Callbacks                                                            | Promises                                                            |
+| ------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| **Definition**      | A function passed as an argument and executed after a task completes | An object that represents the eventual result of an async operation |
+| **Readability**     | Poor when nested (callback hell)                                     | Better and cleaner                                                  |
+| **Code structure**  | Nested callbacks                                                     | Chain using `.then()`                                               |
+| **Error handling**  | Difficult and scattered                                              | Centralized using `.catch()`                                        |
+| **Maintainability** | Hard to maintain                                                     | Easy to maintain                                                    |
+| **Scalability**     | Not suitable for complex async flows                                 | Suitable for complex async flows                                    |
+| **Debugging**       | Hard                                                                 | Easier                                                              |
+| **Modern usage**    | Older approach                                                       | Modern and preferred                                                |

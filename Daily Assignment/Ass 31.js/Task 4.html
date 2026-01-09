@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>localStorage Example</title>
+</head>
+<body>
+
+<button onclick="storeData()">Store Value</button>
+<button onclick="getData()">Get Value</button>
+
+<script>
+  function storeData() {
+    localStorage.setItem("username", "Anbu");
+    alert("Value Stored");
+  }
+
+  function getData() {
+    const name = localStorage.getItem("username");
+    alert(name);
+  }
+</script>
+
+</body>
+</html>

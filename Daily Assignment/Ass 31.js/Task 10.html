@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cart using localStorage</title>
+</head>
+<body>
+
+  <h2>Products</h2>
+  <button onclick="addToCart('Laptop', 50000)">Add Laptop</button>
+  <button onclick="addToCart('Phone', 20000)">Add Phone</button>
+
+  <h2>Cart Items</h2>
+  <ul id="cartList"></ul>
+
+  <script>
+    // Get cart from localStorage or create empty array
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+// Add item to cart
+function addToCart(name, price) {
+  const item = { name, price };
+  cart.push(item);
+
+  // Store updated cart
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  displayCart();
+}
+
+// Display cart items
+function displayCart() {
+  const list = document.getElementById("cartList");
+  list.innerHTML = "";
+
+  cart.forEach((item, index) => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+      ${item.name} - ₹${item.price}
+      <button onclick="removeItem(${index})">Remove</button>
+    `;
+    list.appendChild(li);
+  });
+}
+
+// Remove item
+function removeItem(index) {
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  displayCart();
+}
+
+// Load cart on page refresh
+displayCart();
+
+
+  </script>
+</body>
+</html>

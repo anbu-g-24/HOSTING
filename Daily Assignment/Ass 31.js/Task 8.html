@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Switcher</title>
+
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  padding: 40px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.light {
+  background-color: white;
+  color: black;
+}
+
+.dark {
+  background-color: #121212;
+  color: white;
+}
+
+        
+    </style>
+</head>
+<body>
+
+    <h2>Theme Switcher</h2>
+    <button id="toggletheme">Toggle theme</button>
+    
+
+    <script>
+        const button = document.getElementById("toggletheme");
+
+        const savedTheme = localStorage.getItem("theme")||"light";
+        document.body.className = savedTheme;
+
+        button.addEventListener("click",()=>{
+            let currentTheme=document.body.className;
+
+            if(currentTheme==="light"){
+                document.body.className ="dark";
+                localStorage.setItem("theme", "dark");
+            }else{
+                document.body.className ="light";
+                localStorage.setItem("theme","light");
+            }
+        });
+
+
+    </script>
+
+
+</body>
+</html>
