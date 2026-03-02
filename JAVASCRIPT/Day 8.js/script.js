@@ -21,5 +21,5 @@
 // multidimentional array
 
 const matrix = [[1, 2, 3,4],[33,44,55,],[66,[77,88,99],100]];
-console.log(matrix [3][2][2]);
+console.log(matrix [1]);
 

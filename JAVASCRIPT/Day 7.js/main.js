@@ -9,6 +9,17 @@
 // prototype                     template object from which other objects inheritance property and methods
 
 
+// class person {
+//   constructor(name){
+//     this.name = name
+//   }
+//   greet(){
+//     console.log(`I am ${this.name}`);
+//   }
+// }
+// const a= new person("Anu");
+// a.greet();
+
 
 // class person{
 //     constructor(name,age,city,country){
@@ -21,10 +32,12 @@
 //         console.log(`Hello, i am ${this.name} and i am ${this.age} years old,i am from ${this.city} `);
         
 //     }
-// }
-//     const p1 =new person("Anbu" , 22, "chennai");
+//   }
+//     const p1 = new person("Anbu" , 22, "chennai");
 //     p1.greet();
  
+
+
 
 
 // class animal{
@@ -33,33 +46,52 @@
 //         this.species=species;
 //     }
 //     speak(){
-//         console.log(`${this.name} makes a sound.`);
+//         console.log(`${this.name} makes a sound.${this.species} `);
         
 //     }
-//     class dog extends animal{
-//         bark(){
-//         console.log(`${this.name}barks`);
-//         }
-        
-//     }
+//   }
+// const a1=new animal("leo","lion", "dog");
+// a1.speak();
+
+
+
+
+
+// class Vehicle{
+//     this.type=type;
+// }
+// Vehicle.prototype.drive=function(){
+//     console.log(this.type+ "is ");
+    
 // }
 
-// const a1=new animal("leo","lion");
-// a1.speak();
-// a1.bark();
+
+
+// function Findmax(ary) {
+//  return Math.max(...ary);
+// }
+// console.log(Findmax([2,3,7,5,9, 25]));
 
 
 
 
-class Vehicle{
-    this.type=type;
-}
-Vehicle.prototype.drive=function(){
-    console.log(this.type+ "is ");
-    
-}
+// function remove(arr) {
+//   return [...new Set(arr)];
+// }
+
+// console.log(remove([1,2,2,3,4,4,5, 7 , 6 ,5]));
 
 
+
+
+
+// async function getUsers() {
+//   let response = await fetch("https://jsonplaceholder.typicode.com/users");
+//   let data = await response.json();
+//   console.log(data);
+// }
+
+// getUsers();
 
 
 

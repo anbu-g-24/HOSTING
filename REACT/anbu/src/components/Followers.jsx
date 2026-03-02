@@ -1,38 +1,8 @@
-// import React, { useEffect } from 'react'
-
-// function Followers() {
-
-//     useEffect(()=>{
-//         const fetchFollwers = async()=>{
-//             try{
-//                 const respone = await fetch('https://api.github.com/users/arun-cloud-dev/followers')
-//                 const data = await respone.json()
-            
-//             }
-//         }
-//     })
-//   return (
-//     <div>
-//         <h2>Follwers</h2>
-//         <ul>
-//             {Followers.map((Follower)=>{
-//                 <li>
-
-//                 </li>
-
-//             })}
-//         </ul>
-//     </div>
-//   )
-// }
-
-// export default Followers
-
 
 
 import React, { useEffect, useState } from "react";
 
-function Followers() {
+function Follower() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -68,4 +38,4 @@ function Followers() {
   );
 }
 
-export default Followers;
+export default Follower;

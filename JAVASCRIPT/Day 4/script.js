@@ -29,6 +29,27 @@
 
 
 
-let a=20;
-a--
-console.log(a);
+// let a=20;
+// a++
+// console.log(a);
+
+
+
+// let day = 2;
+
+// switch (day) {
+//   case 1:
+//     console.log("Monday");
+//     case 2:
+//         console.log('Tuesday');
+//     break;
+//   default:
+//     console.log("Invalid day");
+// }
+
+
+
+
+
+console.log(5 == "5");   // true  (value same, type convert pannum)
+console.log(5 === "5");  // false (type different)

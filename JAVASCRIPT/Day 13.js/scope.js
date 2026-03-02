@@ -8,6 +8,8 @@
 // sayName()
 
 
+
+
 // // Function scope
 
 // function anbu(){ 
@@ -77,15 +79,15 @@
 // one();
 
 
-// function fetchData(callback) {
-//   setTimeout(() => {
-//     callback("Data received");
-//   }, 2000);
-// }
+function fetchData(callback) {
+  setTimeout(() => {
+    callback("Data received");
+  }, 2000);
+}
 
-// fetchData((result) => {
-//   console.log(result);
-// });
+fetchData((result) => {
+  console.log(result);
+});
 
 
 // function fetch(callback){
@@ -112,4 +114,46 @@
 // });
 
 
-++
+// function bankaccount(){
+//     let balance = 1000;
+
+//     return{
+//         deposit(amount){
+//             balance +=amount
+//             console.log(balance);
+            
+//         },
+//         withrawal(amount){
+//             balance -=amount
+//             console.log(balance); 
+//         }
+//     }
+// }
+// const Bank = bankaccount();
+
+// Bank.deposit(500);
+// Bank.withrawal(800)
+
+// function SayHello(callback){
+//   setTimeout(() => {
+//     callback("Welcome to Chennai")
+  
+//   }, 2000);
+// }
+// SayHello((Ak)=>{
+//   console.log(Ak);
+  
+// })
+
+
+
+
+// const promise = new Promise((resolve, reject)=>{
+//   let success = true;
+
+//   if(success){
+//     resolve("Payment resived")
+//   }else{
+//     reject("Payment Failed")
+//   }
+// })

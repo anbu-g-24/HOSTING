@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -40,6 +40,57 @@
             event.stopPropagation();
            alert("click child") 
         })
+    </script>
+    
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .parent{
+            background-color: rgb(232, 85, 32);
+            color: white;
+            font-size: 20px;
+            padding: 20px;
+            
+        }
+        .child{
+            background-color: rgb(20, 192, 20);
+            padding: 20px;
+            color: blue;
+            text-align: center;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <div class="parent" id="parent">Parent
+
+        <div class="child" id="child"> Child</div>
+    </div>
+
+    <script>
+        document.getElementById("parent").addEventListener("click",
+            function(){
+                alert("Click Parent")
+            },true
+        );
+
+        document.getElementById("child").addEventListener("click", 
+            function(){
+                event.stopPropagation;
+                alert("Click Child") 
+            }
+        );
     </script>
     
 </body>

@@ -3,19 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="box">Click me</button>
+
+    <script>
+        const box = document.getElementById("box");
+
+
+box.addEventListener("click" , ()=> {
+    box.textContent = "Clicked"
+    box.style.color = "red"
+})
+
+
+box.addEventListener("dblclick", ()=> {
+    box.textContent = "Double Clicked"
+    box.style.color = "green"
+
+})
+
+box.addEventListener("mouseover", ()=> {
+    box.textContent = "Mouse Over "
+    box.style.backgroundColor = "pink"
+
+})
+box.addEventListener("mouseout" , ()=>{
+    box.textContent = "Mouse Out "
+    box.style.backgroundColor = "orange"
+
+
+})
+    </script>
+    
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evemts</title>
     <style>
         #box{
             width:200px;
             height:200px;
-            background-color:  lightblue;
+            background-color:  rgba(128, 115, 105, 0.455);
             display:flex;
             justify-content: center;
             align-items: center;
             font-size: 30px;
             border-radius: 20px;
             border: 2px solid black;
-            box-shadow: 2px 5px 2px 2px rgb(230, 0, 255);
+            box-shadow: 5px 2px 2px green
         }
     </style>
 
@@ -27,4 +72,5 @@
 
     
 </body>
-</html>
+</html> -->
+

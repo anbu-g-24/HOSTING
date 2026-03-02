@@ -1,0 +1,87 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <button onclick="toggleParagraph()">Toggle Paragraph</button>
+<p id="myParagraph">This is the text to show/hide.</p>
+
+<script>
+
+function toggleParagraph(){
+    let para = document.getElementById("myParagraph");
+    if(para.style.display === "none"){
+        para.style.display = "block";
+    }else{
+        para.style.display ="none";
+    }
+}
+</script>
+    
+    
+</body>
+</html> -->
+<!-- 
+
+
+13.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div{
+            padding: 20px;
+        }
+        .active{
+            background-color: rgb(85, 194, 55);
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="toggleBox()">Toggle class</button>
+
+    <div id="box">Hello box</div>
+
+
+    <script>
+        function toggleBox(){
+            document.getElementById("box").classList.toggle("active")
+        }
+    </script>
+    
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button  onclick="showAlert()">Click Me</button>
+
+
+    <script>
+        function showAlert(){
+            alert("Button Clicked");
+        }
+    </script>
+
+    
+</body>
+</html>

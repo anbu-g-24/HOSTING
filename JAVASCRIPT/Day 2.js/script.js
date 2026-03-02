@@ -40,8 +40,8 @@ console.log(age) ;
 const PI =3.14;
 
 {
-    const  PI=2.5;
-    console.log(PI);
+    const  PT=2.5;
+    console.log(PT);
     // logal scope
 }
 
