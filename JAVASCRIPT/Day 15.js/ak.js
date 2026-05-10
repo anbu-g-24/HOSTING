@@ -78,17 +78,17 @@ console.log(userObj);
 
 
 
-  // fetch ("https://jsonplaceholder.typicode.com/users")
-  // .then (response =>response.json())
-  // .then(data=>{
-  //   data.forEach(a=>{
-  //       console.log(a.name);
+//   fetch ("https://jsonplaceholder.typicode.com/users")
+//   .then (response =>response.json())
+//   .then(data=>{
+//     data.forEach(a=>{
+//         console.log(a.name);
         
-  //   });
-  // })
-  // .catch (error =>{
-  //   console.log(error);
+//     });
+//   })
+//   .catch (error =>{
+//     console.log(error);
     
-  // }
-  // )
+//   }
+//   )
   
