@@ -7,13 +7,19 @@
 </head>
 <body>
 
-    <button onclick="showMessage()">Clike me</button>
+    <button onclick="showMessage()" id="btn">Clike me</button>
     <p id="msg"></p>
 
     <script>
         function showmessage(){
-            document.getElementById("msg").innerText ="Hello world"
+            document.getElementById("btn").addEventListener("click", 
+                function (){
+                    document.getElementById("msg").innerText = "Hello Worlds"
+                }
+            )
         }
+        showmessage()
+       
     </script>
     
 </body>

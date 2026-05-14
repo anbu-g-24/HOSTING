@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -36,9 +36,58 @@
 
       }
 
-
   </script>
 
+  
+</body>
+</html>
+ -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error</title>
+</head>
+<body>
+
+  <h2>Error Finding quiz</h2>
+
+  <pre id="codes">
+
+
+
+  </pre>
+  <button onclick="Check('Syntax')">Syntax Error</button>
+  <button onclick="Check('Logical')" >Logical Error</button>
+  <button onclick="Check('Runtime')" >Runtime Error</button>
+
+<p id="result"></p>
+
+<script>
+  let codeTexts = `if(age > 18{  
+  console.log("Eligible")
+  }`;
+
+  let correctAnswers = "Syntax";
+
+  document.getElementById("codes").textContent = codeTexts;
+
+
+  function Check(answer){
+    if(answer === correctAnswers){
+      document.getElementById("result").textContent="✅CurrectAnswer";
+    }else{
+      document.getElementById("result").textContent = "❌wrong Answer";
+    }
+
+  }
+
+
+</script>
   
 </body>
 </html>

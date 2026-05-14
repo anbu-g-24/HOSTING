@@ -19,8 +19,13 @@
 
 
 
-let sum =2;
-for (let i=1; i<=10; i++){
-     console.log(`${i} x ${sum} = ${sum*i}`);
+// let sum =2;
+// for (let i=1; i<=10; i++){
+//      console.log(`${i} x ${sum} = ${sum*i}`);
      
-}
+// }
+
+
+
+
+console.log(true + 1); // 2

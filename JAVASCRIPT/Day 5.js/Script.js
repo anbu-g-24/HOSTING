@@ -1,15 +1,3 @@
-// function greet(name , callback)
-// {
-//     console.log("Hello,"+name);
-
-
-// }
-
-// function sayGoodbye(){
-//     console.log("Goodbye");
-    
-// }
-// greet("Anbu,"+sayGoodbye)
 
 
 
@@ -112,7 +100,7 @@
 //     const blockVar="I am a block-scope variable";
 //     let blockVar1 ="I am a block-scope variable (using let)";
 //     var blockVar2 ="I am a function / global scoped (var) not block-scope variable";
-//     const blockVar3=""
+    
 
 //     console.log(blockVar); 
 //     console.log(blockVar1);
@@ -148,14 +136,29 @@
 
 
 // callingback function
-function greet(name , callback)
-{
-    console.log("hello ,"+name);  
-    callback() 
-}
+// function greet(name , callback)
+// {
+//     console.log("hello ,"+name);  
+//     callback() 
+// }
 
-function sayGoodbye()
-{
-    console.log("Goodbye");
+// function sayGoodbye()
+// {
+//     console.log("Goodbye");
+// }
+//  greet("Anbu" , sayGoodbye)
+
+
+
+// let numbers = [10, 20, 30, 40];
+// let names = ["Anbu", "Raj", "Kumar"];
+
+
+// console.log(numpers.push(50));
+
+numbers =10;
+    
+for(let i=1; i<numbers.length; i++){
+    console.log(numbers[i]);
+    
 }
- greet("Anbu" , sayGoodbye)

@@ -3,15 +3,15 @@ let numbers = [1, 2, 3];
 console.log(numbers[2].toUpperCase());
 
 
-// let numbers =[1,2,3,4];
+let number =[1,2,3,4,"anbu"];
 
-// if (numbers[5] !== undefined) {
-//     console.log(numbers[5].toUppercase());
-// }
-// else{
-//     console.log("value does not exist");
+if (numbers[4] !==undefined ) {
+    console.log(numbers[4]);
+}
+else{
+    console.log("value does not exist");
     
-// }
+}
 
 
 // let words =["hi", "hello" , "good morning" , "okay", "bye"];

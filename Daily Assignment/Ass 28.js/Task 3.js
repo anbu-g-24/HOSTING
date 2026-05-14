@@ -10,10 +10,14 @@ else{
 }
 
 
-let marks =40;
+let marks =15;
 
-if (marks >35 || marks <100){
+if (marks >=35){
     console.log("pass");
-    
- 
 }
+ else if(marks<30 ){
+        console.log("Good");
+    }else  {
+        console.log("Faill");
+        
+    }

@@ -1,16 +1,17 @@
 import React from 'react'
 
-function Profile({name , age, place}) {
+function Profile({name , age , place}) {
   return (
     <div>
-        { <h2>name is {name} and the age is {age} lives in {place}</h2>}
-
-   
+      {<h3>My name is {name}. my age is {age} and I live in {place}</h3>}
     </div>
   )
 }
 
 export default Profile
+
+
+
 
 
 

@@ -4,16 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM</title>
+
+    <style>
+    *{
+        background-color: rgb(157, 248, 157);
+        text-align: center;
+    }
+    </style>
 </head>
 <body>
 
     <h2 id="title">Hello Dom</h2>
     <p id="msg">Welcome </p>
-
-  
-
+    <p id="info"></p>
+    <button id="btn">
+        Click Me
+    </button>
 
 <script>
+    const title = document.getElementById("title");
+    const msg = document.getElementById("msg");
+    const text = document.getElementById("info");
+    const btnn = document.getElementById("btn").addEventListener("click" ,
+        function() {
+            text.innerText = "you clicked the button";
+        }
+    );
+    title.style.color = "red";
+
+
+
   
 </script>
     
@@ -38,4 +58,4 @@
 
 
 
-Html
+

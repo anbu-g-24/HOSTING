@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+
 import './App.css'
 import Header from './components/Header'
 import Profile from './components/Profile'
@@ -11,20 +12,24 @@ import UserRole from './components/UserRole'
 import ToggleMessage from './components/ToggleMessage'
 import Controlledinputs from './components/controlledinputs'
 import Followers from './components/Followers'
+import Follower from './components/Follower'
+import Timer from './components/Timer'
+import DataCountdown from './components/Datacountdown'
+
 
 
 function App() {
 
   const [showProfile , setShowProfile]= useState(false)
   return (
+
     <>
-      <h1>Hello react</h1>
+      <h1>Hello React</h1>
       <Header />
 
       <Profile age="21" name="Anbu" place="Chennai." />
       <Profile age="20" name="Keeru" place="Chennai." />
-      
-      
+      <Profile name="Anbarasu" age="22" place="Tiruvannamalai" />
         <Counter />
         <Toggle />
 
@@ -35,18 +40,35 @@ function App() {
 
         <Followers/>
 
-         
+        <Follower/>
+        <Timer/>
 
-     
-        
-
-
-      
-
-       
-
+        <DataCountdown/>
     </>
+
+    
+
+
+
   )
 }
 
 export default App
+
+
+
+
+//  <>
+//       <nav className="navbar">
+//         <div>
+
+//         </div>
+
+//       </nav>
+
+//       <Routes>
+//         <Route>
+          
+//         </Route>
+//       </Routes>
+//       </>

@@ -7,8 +7,9 @@
 </head>
 <body>
     <h2>Keyboard events</h2>
-    <input type="text" id="textBox" placeholder="type">
+    <input type="text" id="textBox" placeholder="Enter the words">
     <p id="output"></p>
+
 
     <script>
         const input =document.getElementById("textBox")
@@ -17,7 +18,16 @@
         input.addEventListener("keydown",()=>{
             output.textContent="key down event is triggered"
         })
+
+        input.addEventListener("mousedown",()=>{
+            output.textContent ="Please enter the words"
+        })
+
+        
+
     </script>
 
 </body>
 </html>
+
+

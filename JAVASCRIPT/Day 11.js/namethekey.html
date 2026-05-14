@@ -8,20 +8,38 @@
 <body>
     <p>press any key name will appear</p>
 
-    <input type=" text" id="myinput"/>
+    <input type=" text" id="input"/>
 
     <p>Key press:<strong id="output">None</strong></p>
 
+<script>
+    const out = document.getElementById("output");
+    document.addEventListener("keydown",()=>{
+        const pressedkey = event.key;
+
+        out.textContent =pressedkey;
+    })
+
+    document.addEventListener("keyup", ()=>{
+        
+    })
+
+
+</script>
+
+
+
+<!-- 
     <script>
         const outputElement = document.getElementById("output");
-        document.addEventListener("keydown", (event)=>{
+        document.addEventListener("keydown", ()=>{
          const pressedkey =  event.key;
          
          outputElement.textContent = pressedkey;
         });
 
         document.addEventListener("keyup", (event)=> {})
-    </script>
+    </script> -->
 
     
     

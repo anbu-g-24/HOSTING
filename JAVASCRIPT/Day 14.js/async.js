@@ -1,5 +1,7 @@
 // const { reject } = require("async");
 
+const { log } = require("async");
+
 // function fetchData(callback){
 //     setTimeout(()=>{
 //         callback("data Loaded")
@@ -13,16 +15,18 @@
 
 // pending , resolve , reject
 
-// let promise = new Promise((resolve , reject)=>{
-// let success =true;
-// if(success){
-//     resolve("Task completesd");
-// }
-// else{
-//     reject("Task Failed");
-// }
-// });
-// promise
+let promise = new Promise((resolve , reject)=>{
+let success =true;
+if(success){
+    resolve("Task completesd");
+}
+else{
+    reject("Task Failed");
+}
+});
+
+
+
 
 // .catch(error=> console.log(error));
 
@@ -51,7 +55,7 @@ function fetchData(){
     return new Promise(resolve =>{
         setTimeout(()=>{
             resolve("fetched Successfully")
-        })
+        },2000)
     })
 }
 

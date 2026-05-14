@@ -7,8 +7,26 @@
 </head>
 <body>
 
-    <!-- <button id="btn"> chlick count:>0</button>
+    <button id="btn"> chlick count:>0</button>
 
+    <button id="btnn"> chlick count:>0</button>
+
+
+
+<script>
+    function count(){
+        let count=0;
+        return function(){
+            count++
+            document.getElementById("btn").innerText = "Click count:"+count;
+        }
+    }
+
+    const counter = count();
+    document.getElementById("btn"),addEventListener("click",counter)
+</script>
+
+<!-- 
     <script>
         function createCounter(){
             let count=0;
@@ -21,9 +39,9 @@
         const counter = createCounter();
 
         document.getElementById("btn",addEventListener("click", counter));
-    </script>
-     -->
-
+    </script> -->
+    
+<!-- 
      <button id="btn">Click Me</button>
 
 <script>
@@ -31,6 +49,18 @@
    function () {
     alert("Button clicked!");
   });
+</script> -->
+
+<script>
+    function Counts(){
+        let count =0;
+        return function() {
+            count++
+            document.getElementById("btnn").innerText = "Click count:"+count;
+        }
+    }
+    const counters = Counts();
+    document.getElementById("btnn",addEventListener("click", counters ))
 </script>
 
 </body>
