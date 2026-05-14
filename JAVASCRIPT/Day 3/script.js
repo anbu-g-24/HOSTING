@@ -1,8 +1,8 @@
 // let name="alice"
 
 
-let data=null;
-console.log(typeof data);
+// let data=null;
+// console.log(typeof data);
 
 
 // let bignumber=1234567123456712345671234567n;
@@ -17,9 +17,9 @@ console.log(typeof data);
 
 
 
-// let a=10;
-// let b=10;
-// console.log(a===b);
+let a=10;
+let b="10";
+console.log(a==b);
 
 // let id1=Symbol("id");
 // let id2=Symbol("id");

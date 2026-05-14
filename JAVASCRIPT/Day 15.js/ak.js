@@ -78,6 +78,7 @@ console.log(userObj);
 
 
 
+<<<<<<< HEAD
   // fetch ("https://jsonplaceholder.typicode.com/users")
   // .then (response =>response.json())
   // .then(data=>{
@@ -91,4 +92,19 @@ console.log(userObj);
     
   // }
   // )
+=======
+//   fetch ("https://jsonplaceholder.typicode.com/users")
+//   .then (response =>response.json())
+//   .then(data=>{
+//     data.forEach(a=>{
+//         console.log(a.name);
+        
+//     });
+//   })
+//   .catch (error =>{
+//     console.log(error);
+    
+//   }
+//   )
+>>>>>>> 7a073a42f98178917bd8e4315318d8267539306a
   

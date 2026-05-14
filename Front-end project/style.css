@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar full */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, purple, violet);
+    color: white;
+    padding: 15px 30px;
+}
+
+/* Left side */
+.left h2 {
+    margin: 0;
+}
+
+.left p {
+    margin: 2px 0;
+    font-size: 14px;
+}
+
+/* Right side */
+.right a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: white;
+    font-weight: normal;
+}
+
+/* Hover effect (IMPORTANT for marks) */
+.right a:hover {
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+

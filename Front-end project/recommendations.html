@@ -1,0 +1,93 @@
+<style>
+  #recommendations {
+    padding: 50px;
+    text-align: center;
+  }
+
+  #rec-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  /* Recommendation Card */
+  .rec-card {
+    width: 70%;
+    background: #f9f9f9;
+    padding: 15px;
+    border-left: 5px solid purple;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    font-style: italic;
+  }
+
+  /* Input section */
+  .add-rec {
+    margin-top: 30px;
+  }
+
+  .add-rec input {
+    padding: 10px;
+    width: 250px;
+  }
+
+  .add-rec button {
+    padding: 10px 15px;
+    background: purple;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .rec-card:hover {
+    transform: scale(1.03);
+  }
+</style>
+
+<section id="recommendations">
+  <h2>Recommendations</h2>
+
+  <!-- Existing Recommendations -->
+  <div id="rec-container">
+    <div class="rec-card">
+      <p>
+        “Anbu is a highly dedicated developer who delivers quality work on
+        time.”
+      </p>
+    </div>
+
+    <div class="rec-card">
+      <p>“Strong problem-solving skills and great team player.”</p>
+    </div>
+
+    <div class="rec-card">
+      <p>“Very passionate about web development and always eager to learn.”</p>
+    </div>
+  </div>
+
+  <!-- Add New Recommendation -->
+  <div class="add-rec">
+    <input type="text" id="newRec" placeholder="Add new recommendation" />
+    <button onclick="addRecommendation()">Submit</button>
+  </div>
+</section>
+
+<script>
+  function addRecommendation() {
+    let input = document.getElementById("newRec").value;
+
+    if (input === "") return;
+
+    let div = document.createElement("div");
+    div.className = "rec-card";
+
+    let p = document.createElement("p");
+    p.textContent = "“" + input + "”";
+
+    div.appendChild(p);
+
+    document.getElementById("rec-container").appendChild(div);
+
+    document.getElementById("newRec").value = "";
+  }
+</script>

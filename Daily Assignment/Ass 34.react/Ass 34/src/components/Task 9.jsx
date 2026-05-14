@@ -15,7 +15,11 @@ function BlogPost() {
                 React allows developers to build user interfaces using reusable copoenents.
             </paragragh>
             <paragragh>
+<<<<<<< HEAD
                 Nesting components helps  in organizing code and improving readability.
+=======
+                Nesting components helps in organizing code and improving readability.
+>>>>>>> 7a073a42f98178917bd8e4315318d8267539306a
             </paragragh>
         </Content>
 

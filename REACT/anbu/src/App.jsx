@@ -22,6 +22,7 @@ function App() {
 
   const [showProfile , setShowProfile]= useState(false)
   return (
+<<<<<<< HEAD
 
     <>
       <h1>Hello React</h1>
@@ -32,14 +33,27 @@ function App() {
       <Profile name="Anbarasu" age="22" place="Tiruvannamalai" />
         <Counter />
         <Toggle />
+=======
+    // <>
+    //   <h1>Hello react</h1>
+    //   <Header />
 
-        <UserRole/>
-        <ToggleMessage/>
+    //   <Profile age="21" name="Anbu" place="Chennai." />
+    //   <Profile age="20" name="Keeru" place="Chennai." />
+      
+      
+    //     <Counter />
+    //     <Toggle />
+>>>>>>> 7a073a42f98178917bd8e4315318d8267539306a
 
-        <Controlledinputs/>
+    //     <UserRole/>
+    //     <ToggleMessage/>
 
-        <Followers/>
+    //     <Controlledinputs/>
 
+    //     <Followers/>
+
+<<<<<<< HEAD
         <Follower/>
         <Timer/>
 
@@ -47,6 +61,28 @@ function App() {
     </>
 
     
+=======
+    //     <Follower/>
+    //     <Timer/>
+
+    //     <DataCountdown/>
+    // </>
+
+      <>
+      <nav className="navbar">
+        <div>
+
+        </div>
+
+      </nav>
+
+      <Routes>
+        <Route>
+          
+        </Route>
+      </Routes>
+      </>
+>>>>>>> 7a073a42f98178917bd8e4315318d8267539306a
 
 
 
